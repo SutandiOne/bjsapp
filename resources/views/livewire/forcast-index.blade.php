@@ -9,13 +9,13 @@
 </x-slot>
 
 <div class="py-12">
-    <div class="flex flex max-w-7xl mx-auto sm:px-6 lg:px-8 space-x-6">
-        <div class="flex-1 flex flex-col bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
+    <div class="flex flex-col max-w-7xl mx-auto sm:px-6 lg:px-8 md:space-x-4 md:flex-row">
+        <div class="flex-1 flex flex-col bg-white overflow-hidden shadow-xl sm:rounded-lg p-5 mb-6">
             <h1 class="text-2xl mb-4">Ramalan Yang Disimpan</h1>
             <livewire:forecast-table />
 
         </div>
-        <div class="flex flex-col bg-white overflow-hidden shadow-xl sm:rounded-lg p-5 w-1/4">
+        <div class="flex flex-col bg-white overflow-hidden shadow-xl sm:rounded-lg p-5 md:w-1/4">
             <h1 class="text-2xl mb-4">Form Peramalan</h1>
             <div>
                 @if (session()->has('message'))
