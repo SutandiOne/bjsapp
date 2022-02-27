@@ -18,6 +18,8 @@ class ForcastIndex extends Component
 
     public function forecasting()
     {
+
+
         if ($this->tahun && $this->kategori) {
 
             return redirect()->route('forcast.chart', ['id' => $this->tahun, 'kategori' => $this->kategori]);

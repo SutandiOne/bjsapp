@@ -15,10 +15,11 @@ class ForecastTable extends DataTableComponent
         return [
             Column::make("Tanggal Dibuat", "created_at")
                 ->sortable(),
-            Column::make("Tahun", "start_year")
+            Column::make("Tahun", "tahun_mulai")
                 ->sortable(),
-            Column::make("Tahun Diramal", "forecast_year")
-                ->sortable()
+            Column::make("Tahun Diramal", "tahun_ramalan")
+                ->sortable(),
+            Column::make("Aksi")
         ];
     }
 

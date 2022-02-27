@@ -8,17 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * mutator
+     * total_x, total_y, total_x2, total_xy, rumus_a, rumus_b, rumus_y
+     * 
+     * 
      * @return void
      */
     public function up()
     {
         Schema::create('forecastings', function (Blueprint $table) {
             $table->id();
-            $table->year('start_year');
-            $table->year('forecast_year');
-            $table->integer('forecast_rawat_inap_jiwa');
-            $table->integer('forecast_rawat_jalan_jiwa');
+            $table->year('tahun_mulai');
+            $table->year('tahun_akhir');
+            $table->year('tahun_ramalan');
+            $table->string('kategori_rawat');
+            $table->integer('jumlah_jiwa');
+            $table->integer('jumlah_jiwa_diramal');
+
             $table->timestamps();
         });
     }
