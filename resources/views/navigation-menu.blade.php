@@ -21,6 +21,10 @@
                     <x-jet-nav-link href="{{ route('forcast.index') }}" :active="request()->routeIs('forcast*')">
                         {{ __('Peramalan') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about*')">
+                        {{ __('Tentang Aplikasi') }}
+                    </x-jet-nav-link>
+
                 </div>
             </div>
 
