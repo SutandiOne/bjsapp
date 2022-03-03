@@ -13,7 +13,7 @@
         </div>
 
         <div class="ml-12">
-            <h1 class=" text-4xl">{{ $klaim_total }} Jiwa</h1>
+            <h1 class=" text-2xl klaim-number">{{ $klaim_total }} Jiwa</h1>
         </div>
     </div>
     <div class="p-6">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="ml-12">
-            <h1 class=" text-4xl">{{ $klaim_first->tahun . ' - ' . $klaim_latest->tahun }}</h1>
+            <h1 class=" text-2xl klaim-number">{{ $klaim_first->tahun . ' - ' . $klaim_latest->tahun }}</h1>
         </div>
     </div>
 
@@ -48,7 +48,7 @@
         </div>
 
         <div class="ml-12">
-            <h1 class=" text-4xl">{{ $klaim_jalan }} Jiwa</h1>
+            <h1 class=" text-2xl klaim-number">{{ $klaim_jalan }} Jiwa</h1>
         </div>
     </div>
     <div class="p-6">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="ml-12">
-            <h1 class=" text-4xl">{{ $klaim_inap }} Jiwa</h1>
+            <h1 class=" text-2xl klaim-number">{{ $klaim_inap }} Jiwa</h1>
         </div>
     </div>
 </div>

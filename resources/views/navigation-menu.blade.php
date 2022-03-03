@@ -112,6 +112,9 @@
             <x-jet-responsive-nav-link href="{{ route('forcast.index') }}" :active="request()->routeIs('forcast*')">
                 {{ __('Peramalan') }}
             </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('about') }}" :active="request()->routeIs('about*')">
+                {{ __('Tentang Aplikasi') }}
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
