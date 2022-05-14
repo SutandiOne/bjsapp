@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Forecasting;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 class ForecastTable extends DataTableComponent
 {
@@ -31,5 +32,17 @@ class ForecastTable extends DataTableComponent
     public function rowView(): string
     {
         return 'livewire-tables.rows.forecast_table';
+    }
+
+    public function export($id)
+    {
+        $forcast = Forecasting::find($id);
+
+        $pdf = PDF::loadView('reports.forcast', compact('forcast'))->setPaper('a4', 'portrait')->output();
+
+        return response()->streamDownload(
+            fn () => print($pdf),
+            "klaim_bpjs.pdf"
+        );
     }
 }
