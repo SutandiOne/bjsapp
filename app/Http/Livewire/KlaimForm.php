@@ -49,8 +49,10 @@ class KlaimForm extends Component
                 ['tahun' => $tahunForcast],
                 [
                     'rawat_jalan_s' => $data_jalan['tahap_awal'],
+                    'rawat_jalan_s2' => $data_jalan['tahap_kedua'],
                     'rawat_jalan_forecast' => $data_jalan['tahap_akhir'],
                     'rawat_inap_s' => $data_inap['tahap_awal'],
+                    'rawat_inap_s2' => $data_inap['tahap_kedua'],
                     'rawat_inap_forecast' => $data_inap['tahap_akhir'],
                 ]
             );
