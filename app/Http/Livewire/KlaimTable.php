@@ -65,7 +65,12 @@ class KlaimTable extends DataTableComponent
     {
         $count = Klaim::all()->count();
 
-        Klaim::find($id)->delete();
+        if ($count == 4) {
+            Klaim::find($id)->update(['rawat_jalan_jiwa' => null, 'rawat_inap_jiwa' => null]);
+        } else {
+            Klaim::find($id)->delete();
+        }
+
 
         if ($count > 2) {
             $klaim = Klaim::find($id + 1);

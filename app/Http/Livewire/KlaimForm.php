@@ -37,8 +37,8 @@ class KlaimForm extends Component
         $tahunForcast = $this->tahun + 1;
 
         //get forecast inap&jiwa
-        $data_inap = $this->forcasting($tahunForcast,  'rawat_inap');
         $data_jalan = $this->forcasting($tahunForcast, 'rawat_jalan');
+        $data_inap = $this->forcasting($tahunForcast,  'rawat_inap');
 
 
 
@@ -71,27 +71,32 @@ class KlaimForm extends Component
         //define year
         $year1 = $tahun - 1;
         $year1_data = Klaim::find($year1);
+        $year11_data = Klaim::find($year1);
+        $year12_data = Klaim::find($year1);
         $year2 = $tahun - 2;
         $year2_data = Klaim::find($year2);
 
         if ($year2_data !== null) {
 
             $kategori1 = $kategori . '_jiwa';
-            $kategori2 = $year2_data[$kategori . '_s'] ? $kategori . '_s' : $kategori . '_jiwa';
-            $kategori21 = $year2_data[$kategori . '_s2'] ? $kategori . '_s2' : $kategori . '_jiwa';
+            $kategori2 = $kategori . '_jiwa';
 
             $year1_data = $year1_data[$kategori1];
             $year2_data = $year2_data[$kategori2];
-            $year21_data = $year2_data[$kategori21];
 
-            $tahap_awal = ($aph * $year1_data) + ($aph2 * $year2_data);
+            $s1 = $year11_data[$kategori . '_s'] != null ? $year11_data[$kategori . '_s'] : $year2_data;
+            $s2 = $year12_data[$kategori . '_s2'] != null ? $year11_data[$kategori . '_s2'] : $year2_data;
 
-            $tahap_kedua = ($aph * $tahap_awal) + ($aph2 * $year21_data);
+            // dd($s1);
+
+            $tahap_awal = ($aph * $year1_data) + ($aph2 * $s1);
+
+            $tahap_kedua = ($aph * $tahap_awal) + ($aph2 * $s2);
 
             $tahap_ketiga = (2 * $tahap_awal) - $tahap_kedua;
 
             $aph3 = $aph / $aph2;
-            $tahap_keempat = ($tahap_awal - $tahap_kedua) / $aph;
+            $tahap_keempat = ($tahap_awal - $tahap_kedua) * $aph3;
 
             $tahap_akhir = $tahap_ketiga + $tahap_keempat;
 
