@@ -23,8 +23,8 @@ class ForcastChart extends Component
     public function render()
     {
 
-        $klaim = Klaim::all()->where('rawat_jalan_s', '!=', null);
-        $klaim_count = Klaim::all()->where('rawat_jalan_s', '!=', null)->count();
+        $klaim = Klaim::all();
+        $klaim_count = Klaim::all()->count();
 
         $lineChartModel = $klaim
             ->reduce(
