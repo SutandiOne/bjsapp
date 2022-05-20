@@ -14,7 +14,7 @@ class KlaimWidget extends Component
         $this->klaim_total = $this->klaim_inap + $this->klaim_jalan;
 
         $this->klaim_first = Klaim::orderBy('tahun', 'ASC')->first('tahun');
-        $this->klaim_latest = Klaim::orderBy('tahun', 'DESC')->first('tahun');
+        $this->klaim_latest = Klaim::orderBy('tahun', 'DESC')->where('rawat_inap_jiwa', '!=', null)->first('tahun');
 
 
 

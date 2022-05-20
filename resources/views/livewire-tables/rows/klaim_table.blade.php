@@ -3,11 +3,11 @@
         {{ $row->tahun }}
     </x-livewire-tables::table.cell>
 @endif
-@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_jiwa')))
+{{-- @if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_jiwa')))
     <x-livewire-tables::table.cell>
         {{ $row->rawat_jalan_jiwa }} Jiwa
     </x-livewire-tables::table.cell>
-@endif
+@endif --}}
 {{-- @if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_s')))
     <x-livewire-tables::table.cell>
         {{ $row->rawat_jalan_s }} Jiwa

@@ -69,7 +69,7 @@ class KlaimChart extends Component
                     return $pieChartModel->addSlice($year, $rjj + $rij, $this->colors());
                 },
                 (new PieChartModel())
-                    ->setTitle('Total Klaim')
+                    ->setTitle('Total Klaim BPJS')
                     ->setAnimated($this->firstRun)
                     ->withOnSliceClickEvent('onSliceClick')
             );

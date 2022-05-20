@@ -1,5 +1,5 @@
 <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-    <div class="p-6">
+    {{-- <div class="p-6">
         <div class="flex items-center">
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 viewBox="0 0 24 24" class="w-8 h-8 text-gray-400">
@@ -15,7 +15,7 @@
         <div class="ml-12">
             <h1 class=" text-2xl klaim-number">{{ $klaim_total }} Jiwa</h1>
         </div>
-    </div>
+    </div> --}}
     <div class="p-6">
         <div class="flex items-center">
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,12 +31,12 @@
 
         <div class="ml-12">
             <h1 class=" text-2xl klaim-number">
-                {{ $klaim_first ? $klaim_first->tahun . ' - ' . $klaim_latest->tahun - 1 : '' }}
+                {{ $klaim_first ? $klaim_first->tahun . ' - ' . $klaim_latest->tahun : '' }}
             </h1>
         </div>
     </div>
 
-    <div class="p-6">
+    {{-- <div class="p-6">
         <div class="flex items-center">
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 viewBox="0 0 24 24" class="w-8 h-8 text-gray-400">
@@ -52,7 +52,7 @@
         <div class="ml-12">
             <h1 class=" text-2xl klaim-number">{{ $klaim_jalan }} Jiwa</h1>
         </div>
-    </div>
+    </div> --}}
     <div class="p-6">
         <div class="flex items-center">
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
