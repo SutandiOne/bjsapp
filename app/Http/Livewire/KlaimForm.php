@@ -100,7 +100,7 @@ class KlaimForm extends Component
 
             $tahap_akhir = $tahap_ketiga + $tahap_keempat;
 
-            return ['tahap_awal' => $tahap_awal, 'tahap_kedua' => $tahap_kedua, 'tahap_akhir' => ceil($tahap_akhir)];
+            return ['tahap_awal' => ceil($tahap_awal), 'tahap_kedua' => ceil($tahap_kedua), 'tahap_akhir' => ceil($tahap_akhir)];
         } else {
             return null;
         }
