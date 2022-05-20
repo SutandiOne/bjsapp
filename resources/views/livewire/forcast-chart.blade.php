@@ -9,38 +9,23 @@
 
 </x-slot>
 
-<div class="py-12">
-    <div class="flex flex-col max-w-xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
-            <h1 class="text-2xl text-center font-bold">Hasil Peramalan</h1>
-            <h1 class="text-xl mb-4 text-center">Kategori Klaim Rawat Jalan</h1>
 
-            <div class=" flex flex-col shadow-md rounded-lg">
-                <ul class="flex border border-gray-300">
-                    <li class="p-2 text-md bg-gray-200 w-48 font-bold"> Tahun</li>
-                    <li class="p-2 text-md  flex-1 tracking-wide">2020</li>
-                </ul>
-                <ul class="flex border border-gray-300">
-                    <li class="p-2 text-md bg-gray-200 w-48 font-bold">Jumlah Jiwa</li>
-                    <li class="p-2 text-md  flex-1 tracking-wide">232,854</li>
-                </ul>
-                <ul class="flex border border-gray-300">
-                    <li class="p-2 text-md bg-gray-200 w-48 font-bold"> Tahun Ramalan</li>
-                    <li class="p-2 text-md  flex-1 tracking-wide">2021</li>
-                </ul>
-                <ul class="flex border border-gray-300">
-                    <li class="p-2 text-md bg-gray-200 w-48 font-bold">Ramalan Jiwa</li>
-                    <li class="p-2 text-md  flex-1 tracking-wide">522,421</li>
-                </ul>
-
-
-            </div>
-            <div class="flex items-center justify-end mt-6">
-
-                <x-jet-button class="ml-4 bg-blue-800">
-                    {{ __('Simpan') }}
-                </x-jet-button>
-            </div>
+<div class="py-6">
+    <div class="flex-row flex-col max-w-7xl mx-auto sm:px-6 lg:px-8 md:space-x-4 md:flex-row">
+        <div class="flex-1 flex flex-col overflow-hidden sm:rounded-lg p-5 mb-6">
+            @if ($klaim_count != 0)
+                <div class="shadow rounded p-4 border bg-white" style="height: 32rem;">
+                    <livewire:livewire-line-chart key="{{ $lineChartModel->reactiveKey() }}" :line-chart-model="$lineChartModel" />
+                </div>
+                <div class="shadow rounded p-4 border bg-white mt-8" style="height: 32rem;">
+                    <livewire:livewire-line-chart key="{{ $lineChartModel1->reactiveKey() }}" :line-chart-model="$lineChartModel1" />
+                </div>
+            @else
+                <h1 class="bg-white text-center text-4xl p-6 font-mono"><b class="text-red-600">!</b>
+                    Belum ada data
+                    yang diramalan
+                </h1>
+            @endif
 
         </div>
     </div>

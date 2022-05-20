@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('klaims', function (Blueprint $table) {
             $table->year('tahun')->primary();
-            $table->integer('rawat_inap_jiwa');
-            $table->integer('rawat_jalan_jiwa');
+            $table->integer('rawat_inap_jiwa')->nullable();
+            $table->integer('rawat_inap_s')->nullable();
+            $table->integer('rawat_inap_forecast')->nullable();
+            $table->integer('rawat_jalan_jiwa')->nullable();
+            $table->integer('rawat_jalan_s')->nullable();
+            $table->integer('rawat_jalan_forecast')->nullable();
             $table->timestamps();
         });
     }

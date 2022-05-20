@@ -32,5 +32,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/klaim/chart', KlaimChart::class)->name('klaim.chart');
     Route::get('/klaim/form/{id?}', KlaimForm::class)->name('klaim.form');
     Route::get('/forcast', ForcastIndex::class)->name('forcast.index');
-    Route::get('/forcast/{id}/{kategori}', ForcastChart::class)->name('forcast.chart');
+    Route::get('/forcast/chart', ForcastChart::class)->name('forcast.chart');
 });

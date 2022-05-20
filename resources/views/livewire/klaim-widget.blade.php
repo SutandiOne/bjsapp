@@ -30,7 +30,9 @@
         </div>
 
         <div class="ml-12">
-            <h1 class=" text-2xl klaim-number">{{ $klaim_first->tahun . ' - ' . $klaim_latest->tahun }}</h1>
+            <h1 class=" text-2xl klaim-number">
+                {{ $klaim_first ? $klaim_first->tahun . ' - ' . $klaim_latest->tahun - 1 : '' }}
+            </h1>
         </div>
     </div>
 

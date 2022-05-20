@@ -8,8 +8,6 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * mutator
-     * total_x, total_y, total_x2, total_xy, rumus_a, rumus_b, rumus_y
      * 
      * 
      * @return void
@@ -22,7 +20,6 @@ return new class extends Migration
             $table->year('tahun_akhir');
             $table->year('tahun_ramalan');
             $table->string('kategori_rawat');
-            $table->integer('jumlah_jiwa');
             $table->integer('jumlah_jiwa_diramal');
 
             $table->timestamps();

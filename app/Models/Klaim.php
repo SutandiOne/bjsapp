@@ -12,5 +12,4 @@ class Klaim extends Model
     protected $guarded = [];
     protected $primaryKey = 'tahun';
     public $incrementing = false;
-    
 }

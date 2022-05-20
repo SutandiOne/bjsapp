@@ -1,16 +1,25 @@
-<x-livewire-tables::table.cell>
-    {{ $row->created_at }}
-</x-livewire-tables::table.cell>
-<x-livewire-tables::table.cell>
-    {{ $row->tahun_mulai }}
-</x-livewire-tables::table.cell>
-<x-livewire-tables::table.cell>
-    {{ $row->tahun_ramalan }}
-</x-livewire-tables::table.cell>
-<x-livewire-tables::table.cell>
-    <a href="{{ route('forcast.chart', ['id' => 2019, 'kategori' => 'rrj']) }}"
-        class="text-teal-800 font-bold tracking-wide hover:text-teal-900 border p-2 border-teal-800 rounded-sm mr-2">Lihat</a>
-    <a wire:click="export({{ $row->id }})"
-        class="text-teal-800 font-bold tracking-wide hover:text-blue-900 border p-2 border-blue-800 rounded-sm cursor-pointer">Laporan</a>
-
-</x-livewire-tables::table.cell>
+@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('tahun')))
+    <x-livewire-tables::table.cell>
+        {{ $row->tahun }}
+    </x-livewire-tables::table.cell>
+@endif
+@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_jiwa')))
+    <x-livewire-tables::table.cell>
+        {{ $row->rawat_jalan_jiwa ?: '-' }} Jiwa
+    </x-livewire-tables::table.cell>
+@endif
+@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_forecast')))
+    <x-livewire-tables::table.cell>
+        {{ $row->rawat_jalan_forecast ?: '-' }} Jiwa
+    </x-livewire-tables::table.cell>
+@endif
+@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_inap_jiwa')))
+    <x-livewire-tables::table.cell>
+        {{ $row->rawat_inap_jiwa ?: '-' }} Jiwa
+    </x-livewire-tables::table.cell>
+@endif
+@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_inap_forecast')))
+    <x-livewire-tables::table.cell>
+        {{ $row->rawat_inap_forecast ?: '-' }} Jiwa
+    </x-livewire-tables::table.cell>
+@endif

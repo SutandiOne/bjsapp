@@ -5,28 +5,33 @@ namespace App\Http\Livewire;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\Forecasting;
+use App\Models\Klaim;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 class ForecastTable extends DataTableComponent
 {
 
+    public bool $columnSelect = true;
+
     public function columns(): array
     {
         return [
-            Column::make("Tanggal Dibuat", "created_at")
+            Column::make("Tahun", "tahun")
                 ->sortable(),
-            Column::make("Tahun", "tahun_mulai")
+            Column::make("Rawat Jalan", "rawat_jalan_jiwa")
                 ->sortable(),
-            Column::make("Tahun Diramal", "tahun_ramalan")
+            Column::make("Rawat Jalan Ramalan", "rawat_jalan_forecast")
                 ->sortable(),
-            Column::make("Aksi")
+            Column::make("Rawat Inap", "rawat_inap_jiwa")
+                ->sortable(),
+            Column::make("Rawat Inap Ramalan", "rawat_inap_forecast")
+                ->sortable(),
         ];
     }
 
     public function query(): Builder
     {
-        return Forecasting::query();
+        return Klaim::query()->where('rawat_jalan_s', '!=', null);
     }
 
     public function rowView(): string
@@ -36,7 +41,7 @@ class ForecastTable extends DataTableComponent
 
     public function export($id)
     {
-        $forcast = Forecasting::find($id);
+        $forcast = Klaim::find($id);
 
         $pdf = PDF::loadView('reports.forcast', compact('forcast'))->setPaper('a4', 'portrait')->output();
 
