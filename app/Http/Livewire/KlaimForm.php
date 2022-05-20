@@ -74,24 +74,26 @@ class KlaimForm extends Component
 
         if ($year2_data !== null) {
 
-            $kategori1 = $year1_data[$kategori . '_s'] ? $kategori . '_s' : $kategori . '_jiwa';
+            $kategori1 = $kategori . '_jiwa';
             $kategori2 = $year2_data[$kategori . '_s'] ? $kategori . '_s' : $kategori . '_jiwa';
+            $kategori21 = $year2_data[$kategori . '_s2'] ? $kategori . '_s2' : $kategori . '_jiwa';
 
             $year1_data = $year1_data[$kategori1];
             $year2_data = $year2_data[$kategori2];
+            $year21_data = $year2_data[$kategori21];
 
             $tahap_awal = ($aph * $year1_data) + ($aph2 * $year2_data);
 
-            $tahap_kedua = ($aph * $tahap_awal) + ($aph2 * $year2_data);
+            $tahap_kedua = ($aph * $tahap_awal) + ($aph2 * $year21_data);
 
             $tahap_ketiga = (2 * $tahap_awal) - $tahap_kedua;
 
             $aph3 = $aph / $aph2;
-            $tahap_keempat = ($tahap_awal - $tahap_kedua) * $aph3;
+            $tahap_keempat = ($tahap_awal - $tahap_kedua) / $aph;
 
             $tahap_akhir = $tahap_ketiga + $tahap_keempat;
 
-            return ['tahap_awal' => $tahap_awal, 'tahap_akhir' => ceil($tahap_akhir)];
+            return ['tahap_awal' => $tahap_awal, 'tahap_kedua' => $tahap_kedua, 'tahap_akhir' => ceil($tahap_akhir)];
         } else {
             return null;
         }

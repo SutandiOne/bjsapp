@@ -17,9 +17,11 @@ return new class extends Migration
             $table->year('tahun')->primary();
             $table->integer('rawat_inap_jiwa')->nullable();
             $table->integer('rawat_inap_s')->nullable();
+            $table->integer('rawat_inap_s2')->nullable();
             $table->integer('rawat_inap_forecast')->nullable();
             $table->integer('rawat_jalan_jiwa')->nullable();
             $table->integer('rawat_jalan_s')->nullable();
+            $table->integer('rawat_jalan_s2')->nullable();
             $table->integer('rawat_jalan_forecast')->nullable();
             $table->timestamps();
         });
