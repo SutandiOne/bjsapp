@@ -13,6 +13,11 @@
         {{ $row->rawat_jalan_s ?: '-' }} Jiwa
     </x-livewire-tables::table.cell>
 @endif
+@if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_s2')))
+    <x-livewire-tables::table.cell>
+        {{ $row->rawat_jalan_s ?: '-' }} Jiwa
+    </x-livewire-tables::table.cell>
+@endif
 @if (!$columnSelect || ($columnSelect && $this->isColumnSelectEnabled('rawat_jalan_forecast')))
     <x-livewire-tables::table.cell>
         {{ $row->rawat_jalan_forecast ?: '-' }} Jiwa

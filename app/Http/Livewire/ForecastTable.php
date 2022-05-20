@@ -22,6 +22,8 @@ class ForecastTable extends DataTableComponent
                 ->sortable(),
             Column::make("S", "rawat_jalan_s")
                 ->sortable(),
+            Column::make("S", "rawat_jalan_s2")
+                ->sortable(),
             Column::make("Rawat Jalan Ramalan", "rawat_jalan_forecast")
                 ->sortable(),
             Column::make("Rawat Inap", "rawat_inap_jiwa")
