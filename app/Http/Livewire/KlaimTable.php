@@ -32,6 +32,8 @@ class KlaimTable extends DataTableComponent
         return [
             Column::make("Tahun", "tahun")
                 ->sortable(),
+            Column::make("Rawat Jalan", "rawat_jalan_jiwa")
+                ->sortable(),
             Column::make("Rawat Inap", "rawat_inap_jiwa")
                 ->sortable(),
             Column::make("Aksi"),
