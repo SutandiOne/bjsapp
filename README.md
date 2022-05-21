@@ -4,8 +4,5 @@ https://github.com/asantibanez/livewire-charts
 
 https://github.com/livewire/awesome-tall-stack
 
--   full page isi table ramalan mse,msi per kategori
--   hasil permalan hitung satu aja.
--
-
 git push heroku main
+git push origin main

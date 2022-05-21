@@ -18,7 +18,7 @@ class KlaimForm extends Component
         $klaim_tahun  = $klaim != null ? $klaim->tahun + 1 : null;
 
         $this->tahun = $data ? $id : $klaim_tahun;
-        $this->rawat_jalan_jiwa = $data ? $data->rawat_jalan_jiwa : 100;
+        $this->rawat_jalan_jiwa = $data ? $data->rawat_jalan_jiwa : '';
         $this->rawat_inap_jiwa = $data ? $data->rawat_inap_jiwa : '';
     }
 

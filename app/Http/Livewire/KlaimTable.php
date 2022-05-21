@@ -32,12 +32,6 @@ class KlaimTable extends DataTableComponent
         return [
             Column::make("Tahun", "tahun")
                 ->sortable(),
-            // Column::make("Rawat Jalan", "rawat_jalan_jiwa")
-            //     ->sortable(),
-            // Column::make("S", "rawat_jalan_s")
-            //     ->sortable(),
-            // Column::make("Forecast", "rawat_jalan_forecast")
-            //     ->sortable(),
             Column::make("Rawat Inap", "rawat_inap_jiwa")
                 ->sortable(),
             Column::make("Aksi"),
@@ -47,7 +41,6 @@ class KlaimTable extends DataTableComponent
     public function query(): Builder
     {
         return Klaim::query()->where('rawat_jalan_jiwa', '!=', null);
-        // return Klaim::query();
     }
 
     public function rowView(): string
@@ -65,7 +58,7 @@ class KlaimTable extends DataTableComponent
     {
         $count = Klaim::all()->count();
 
-        if ($count == 4) {
+        if ($count >= 4) {
             Klaim::find($id)->update(['rawat_jalan_jiwa' => null, 'rawat_inap_jiwa' => null]);
         } else {
             Klaim::find($id)->delete();

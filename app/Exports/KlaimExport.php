@@ -29,7 +29,7 @@ class KlaimExport implements FromCollection, WithMapping, WithHeadings, ShouldAu
      */
     public function collection()
     {
-        return Klaim::all();
+        return Klaim::all()->where('rawat_inap_jiwa', '!=', null);
     }
 
     public function headings(): array

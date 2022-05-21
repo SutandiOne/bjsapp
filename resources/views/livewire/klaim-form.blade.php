@@ -22,7 +22,7 @@
                         <span class="text-red-600 error">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mt-4 hidden">
+                <div class="mt-4">
                     <x-jet-label for="rjj" value="{{ __('Rawat Jalan Jiwa') }}" />
                     <x-jet-input wire:model.defer="rawat_jalan_jiwa" id="rjj" class="block mt-1 w-full" type="number"
                         name="rjj" required />
