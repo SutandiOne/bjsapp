@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
+    Route::get('/beranda', function () {
         return view('dashboard');
     })->name('dashboard');
     Route::get('/klaim', KlaimIndex::class)->name('klaim.index');
